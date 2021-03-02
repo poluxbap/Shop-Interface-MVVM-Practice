@@ -1,0 +1,9 @@
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\bin\Debug\netstandard2.0\MvxWYRP.Core.deps.json
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\bin\Debug\netstandard2.0\MvxWYRP.Core.dll
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\bin\Debug\netstandard2.0\MvxWYRP.Core.pdb
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\obj\Debug\netstandard2.0\MvxWYRP.Core.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\obj\Debug\netstandard2.0\MvxWYRP.Core.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\obj\Debug\netstandard2.0\MvxWYRP.Core.AssemblyInfo.cs
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\obj\Debug\netstandard2.0\MvxWYRP.Core.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\obj\Debug\netstandard2.0\MvxWYRP.Core.dll
+C:\Users\Usuario\source\repos\MvxWYRP\MvxWYRP.Core\obj\Debug\netstandard2.0\MvxWYRP.Core.pdb

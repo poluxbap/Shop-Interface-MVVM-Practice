@@ -1,0 +1,66 @@
+﻿<views:MvxWpfView
+    xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+    xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Binding;assembly=MvvmCross.Platforms.Wpf"
+    x:Class="MvxWYRP.Wpf.Views.GuestBookView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MvxWYRP.Wpf.Views"
+             mc:Ignorable="d" FontSize="20"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Row 1 / Menu -->
+        <Button Click="LoadClientes" Grid.Column="0" Grid.Row="0">Clientes</Button>
+        <Button Click="LoadProdutos" Grid.Column="1" Grid.Row="0">Produtos</Button>
+        <Button Click="LoadVendas" Grid.Column="2" Grid.Row="0">Pedido</Button>
+
+        <!-- First Page / Clientes -->
+        <StackPanel Visibility="Visible" x:Name="Clientes" Margin="10 20 10 10" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+            <TextBlock Text="Nome" />
+            <TextBox PreviewTextInput="AlphaValidationTextBox" Text="{Binding Nome, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <TextBlock Text="ID(CPF/CNPJ)" />
+            <TextBox PreviewTextInput="IDValidationTextBox" Text="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <Button Click="addClient" IsEnabled="{Binding CanAddGuest}" Margin="0 0 0 15">Adicionar Cliente</Button>
+            <Button Click="deleteClient" Margin="0 0 0 15">Deletar Cliente</Button>
+            <DataGrid x:Name="ClientesGrid" AutoGenerateColumns="True"></DataGrid>
+        </StackPanel>
+
+        <!-- Second Page / Produtos -->
+        <StackPanel Visibility="Hidden" x:Name="Produtos" Margin="10 20 10 10" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+            <TextBlock Text="Produto" />
+            <TextBox PreviewTextInput="AlphaValidationTextBox" Text="{Binding Produto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <TextBlock Text="Info" />
+            <TextBox PreviewTextInput="AlphaValidationTextBox" Text="{Binding Info, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <TextBlock Text="Valor" />
+            <TextBox PreviewTextInput="QuantidadeValidationTextBox" Text="{Binding Valor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <Button Click="addProduct" IsEnabled="{Binding CanAddProduto}" Margin="0 0 0 15">Adicionar Produto</Button>
+            <Button Click="deleteProduct" Margin="0 0 0 15">Deletar Produto</Button>
+            <DataGrid x:Name="ProdutosGrid" AutoGenerateColumns="True"></DataGrid>
+        </StackPanel>
+
+        <!-- Third Page / Vendas -->
+        <StackPanel Visibility="Hidden" x:Name="Pedido" Margin="10 20 10 10" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+            <TextBlock Text="Cliente" />
+            <ComboBox x:Name="ClienteBox" SelectedItem="{Binding Path=OrderNome, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <TextBlock Text="Produto" />
+            <ComboBox x:Name="ProdutoBox" SelectedItem="{Binding Path=OrderProduto, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <TextBlock Text="Quantidade" />
+            <TextBox PreviewTextInput="QuantidadeValidationTextBox" Text="{Binding OrderQuantidade, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 15" />
+            <Button Click="addOrder" IsEnabled="{Binding CanAddOrder}" Margin="0 0 0 15">Adicionar Pedido</Button>
+            <Button Click="deleteOrder" Margin="0 0 0 15">Deletar Pedido</Button>
+            <DataGrid x:Name="VendasGrid" AutoGenerateColumns="True"></DataGrid>
+        </StackPanel>
+        
+    </Grid>
+</views:MvxWpfView>
